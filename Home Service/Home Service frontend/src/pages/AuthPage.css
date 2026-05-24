@@ -1,0 +1,175 @@
+/* src/pages/AuthPage.css */
+
+.auth-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  background-color: #f4f7f6; /* Very soft gray/blue background */
+  padding: 2rem;
+}
+
+.auth-card {
+  background: white;
+  width: 100%;
+  max-width: 480px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 2.5rem;
+  transition: all 0.3s ease;
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.auth-header h2 {
+  color: #2c3e50;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.auth-header p {
+  color: #7f8c8d;
+  font-size: 0.95rem;
+}
+
+.auth-error {
+  background-color: #fee2e2;
+  color: #dc2626;
+  padding: 0.75rem;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #fecaca;
+}
+
+/* 🌟 Role Selector Styles */
+.role-selector {
+  display: flex;
+  background-color: #f1f5f9;
+  border-radius: 10px;
+  padding: 4px;
+  margin-bottom: 1.5rem;
+}
+
+.role-btn {
+  flex: 1;
+  padding: 0.6rem;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.role-btn.active {
+  background-color: white;
+  color: #3498db; /* HomeService Blue */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.input-row {
+  display: block;
+  gap: 1rem;
+}
+
+.input-row .auth-input-group {
+  flex: 1;
+}
+
+.auth-input-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.auth-input-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #34495e;
+  margin-bottom: 0.4rem;
+}
+
+.auth-input-group input {
+  padding: 0.8rem 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background-color: #f8fafc;
+}
+
+.auth-input-group input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+  background-color: white;
+}
+
+.auth-submit-btn {
+  background-color: #3498db; /* Matches your banner */
+  color: white;
+  padding: 0.9rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.auth-submit-btn:hover {
+  background-color: #2980b9;
+}
+
+.auth-submit-btn:active {
+  transform: scale(0.98);
+}
+
+.auth-submit-btn:disabled {
+  background-color: #94a3b8;
+  cursor: not-allowed;
+}
+
+.auth-footer {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.auth-footer span {
+  color: #3498db;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.auth-footer span:hover {
+  color: #2980b9;
+  text-decoration: underline;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+  .input-row {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .auth-card {
+    padding: 1.5rem;
+  }
+}

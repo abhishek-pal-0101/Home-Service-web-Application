@@ -1,0 +1,179 @@
+/* src/pages/MyBookings.css */
+.my-bookings-wrapper {
+  background: linear-gradient(135deg, #f8fafc 0%, #edf2f7 100%);
+  min-height: calc(100vh - 80px);
+  padding: 60px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.my-bookings-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.my-bookings-header {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.my-bookings-header h2 {
+  color: #1a202c;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.my-bookings-header p {
+  color: #718096;
+  font-size: 1.1rem;
+}
+
+/* --- Grid & Cards --- */
+.bookings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.modern-booking-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.modern-booking-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* A colorful accent bar at the top of each card */
+.modern-booking-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, #3498db, #2ecc71);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #edf2f7;
+  padding-bottom: 15px;
+}
+
+.detail-text {
+  display: flex;
+  gap: 50px;
+  flex-direction: row;
+}
+
+.detail-info {
+  margin-left: 40px;
+  gap: 10px;
+}
+
+
+.card-header h3 {
+  color: #2d3748;
+  font-size: 1.4rem;
+  margin: 0 0 5px 0;
+}
+
+.booking-id {
+  font-size: 0.85rem;
+  color: #a0aec0;
+}
+
+/* --- Status Badges --- */
+.badge {
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.badge.pending { background: #fffbeb; color: #d97706; border: 1px solid #fde68a; }
+.badge.confirmed { background: #ecfdf5; color: #059669; border: 1px solid #a7f3d0; }
+.badge.completed { background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; }
+.badge.cancelled { background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; }
+
+/* --- Card Body Details --- */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.detail-row {
+  display: flex;
+  align-items: flex-start;
+}
+
+.detail-icon {
+  font-size: 1.2rem;
+  margin-right: 15px;
+  background: #f7fafc;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.detail-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-label {
+  font-size: 0.75rem;
+  color: #a0aec0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+
+.detail-value {
+  color: #4a5568;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* --- Empty States & Loaders --- */
+.empty-state {
+  text-align: center;
+  padding: 80px 20px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+.empty-state h3 { color: #2d3748; margin-bottom: 15px; font-size: 1.8rem; }
+.empty-state p { color: #718096; margin-bottom: 25px; }
+.explore-btn {
+  background: #3498db;
+  color: white;
+  padding: 14px 30px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s;
+  display: inline-block;
+}
+.explore-btn:hover { background: #2980b9; transform: translateY(-2px); }
+
+.loader-container { display: flex; justify-content: center; margin-top: 100px; }
+.loader {
+  border: 4px solid #edf2f7; border-top: 4px solid #3498db;
+  border-radius: 50%; width: 50px; height: 50px; animation: spin 1s linear infinite;
+}
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }

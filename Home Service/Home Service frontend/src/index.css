@@ -1,0 +1,23 @@
+/* src/index.css */
+
+/* 1. Global Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 2. Base Body Styles */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f8f9fa; /* A very light grey for a clean, modern background */
+  color: #333333; /* Dark grey text for readability */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 3. Link Default Removal */
+a {
+  text-decoration: none;
+  color: inherit;
+}

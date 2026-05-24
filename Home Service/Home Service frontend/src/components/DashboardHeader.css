@@ -1,0 +1,87 @@
+.dash-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  height: 65px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+}
+
+/* Theme colours */
+.user-header     { background: linear-gradient(90deg, #667eea, #764ba2); }
+.provider-header { background: linear-gradient(90deg, #142434, #1e3a4f); }
+.admin-header    { background: linear-gradient(90deg, #1a2332, #2c3e50); }
+
+.dash-header-left  { display: flex; align-items: center; gap: 2rem; }
+.dash-header-right { display: flex; align-items: center; gap: 1rem; }
+
+.dash-logo {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: white;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.dash-logo span     { color: #f39c12; }
+.admin-logo         { cursor: default; font-size: 1.2rem; }
+
+.dash-nav { display: flex; gap: 4px; }
+.dash-nav-btn {
+  background: rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.85);
+  border: none;
+  padding: 7px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.dash-nav-btn:hover     { background: rgba(255,255,255,0.25); color: white; }
+.admin-nav-active       { background: #3498db !important; color: white !important; font-weight: 700 !important; }
+
+.dash-user-info { display: flex; align-items: center; gap: 10px; }
+
+.dash-avatar {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 1rem; color: white;
+  flex-shrink: 0;
+}
+.user-avatar     { background: rgba(255,255,255,0.25); border: 2px solid rgba(255,255,255,0.5); }
+.provider-avatar { background: #11998e; border: 2px solid #38ef7d; }
+.admin-avatar    { background: #3498db; border: 2px solid #5dade2; }
+
+.dash-username  { color: white; font-weight: 600; font-size: 0.9rem; }
+.dash-role-badge {
+  font-size: 0.72rem; font-weight: 700;
+  padding: 2px 8px; border-radius: 20px;
+  display: inline-block; margin-top: 2px;
+}
+.user-badge     { background: rgba(255,255,255,0.2); color: white; }
+.provider-badge { background: rgba(56,239,125,0.25); color: #38ef7d; }
+.admin-badge    { background: rgba(52,152,219,0.3); color: #5dade2; }
+
+.dash-logout {
+  padding: 8px 18px;
+  border: 2px solid rgba(255,255,255,0.4);
+  background: transparent;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.dash-logout:hover { background: rgba(255,255,255,0.15); border-color: white; }
+
+@media (max-width: 768px) {
+  .dash-nav { display: none; }
+  .dash-header { padding: 0 1rem; }
+}

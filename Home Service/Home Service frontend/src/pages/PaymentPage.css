@@ -1,0 +1,495 @@
+/* ══════════════════════════════════════
+   PAYMENT PAGE — Full Redesign
+══════════════════════════════════════ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* { box-sizing: border-box; }
+
+.pay-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f0f4ff 0%, #e8f0fe 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  font-family: 'Inter', sans-serif;
+}
+
+.pay-container {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+  max-width: 1000px;
+  align-items: flex-start;
+}
+
+/* ── LEFT PANEL ─────────────────────── */
+.pay-left {
+  flex: 1.4;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.10);
+  overflow: hidden;
+}
+
+.pay-header {
+  background: linear-gradient(135deg, #1e3a8a, #2563eb);
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.pay-back {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-family: inherit;
+}
+.pay-back:hover { background: rgba(255,255,255,0.25); }
+
+.pay-header h2 {
+  margin: 0;
+  color: white;
+  font-size: 1.3rem;
+  flex: 1;
+}
+
+.pay-secure-tag {
+  background: rgba(255,255,255,0.15);
+  color: #bfdbfe;
+  font-size: 0.78rem;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+/* Method Tabs */
+.pay-methods {
+  display: flex;
+  border-bottom: 2px solid #f1f5f9;
+  overflow-x: auto;
+}
+.pay-method-btn {
+  flex: 1;
+  padding: 14px 8px;
+  border: none;
+  background: #fff;
+  color: #64748b;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+  border-bottom: 3px solid transparent;
+  font-family: inherit;
+}
+.pay-method-btn:hover { background: #f8fafc; color: #2563eb; }
+.pay-method-btn.active { color: #2563eb; border-bottom-color: #2563eb; background: #eff6ff; }
+
+/* Form Area */
+.pay-form {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pay-form-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 4px;
+}
+
+.pay-field { display: flex; flex-direction: column; gap: 6px; }
+.pay-field label { font-size: 0.82rem; font-weight: 600; color: #475569; }
+.pay-field input, .pay-field select {
+  padding: 11px 14px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: border-color 0.2s;
+  outline: none;
+}
+.pay-field input:focus, .pay-field select:focus { border-color: #2563eb; }
+
+.pay-field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+.card-input-wrap { position: relative; }
+.card-input-wrap input { width: 100%; padding-right: 40px; }
+.card-icons { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); font-size: 1.2rem; }
+
+.card-save-row { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: #64748b; }
+.card-save-row input { width: auto; }
+
+.pay-divider { border: none; border-top: 1px dashed #e2e8f0; }
+
+/* UPI Apps */
+.upi-apps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.upi-app-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 8px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #374151;
+  transition: all 0.2s;
+}
+.upi-app-btn:hover { border-color: #2563eb; background: #eff6ff; }
+.upi-app-btn.selected { border-color: #2563eb; background: #eff6ff; color: #2563eb; }
+.upi-icon {
+  width: 38px; height: 38px; border-radius: 10px;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  color: white; font-weight: 800; font-size: 1rem;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* Net Banking */
+.netbank-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.netbank-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 8px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #374151;
+  transition: all 0.2s;
+}
+.netbank-btn:hover { border-color: #2563eb; }
+.netbank-btn.selected { border-color: #2563eb; background: #eff6ff; }
+.bank-icon {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: linear-gradient(135deg, #1e40af, #3b82f6);
+  color: white; font-weight: 800; font-size: 1rem;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* Wallet */
+.wallet-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.wallet-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 8px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #374151;
+  transition: all 0.2s;
+}
+.wallet-btn:hover { border-color: #2563eb; }
+.wallet-btn.selected { border-color: #2563eb; }
+.wallet-icon {
+  width: 38px; height: 38px; border-radius: 10px;
+  color: white; font-weight: 800; font-size: 1.1rem;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* Pay Button */
+.pay-submit-btn {
+  padding: 15px;
+  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+  box-shadow: 0 4px 14px rgba(37,99,235,0.4);
+  margin-top: 4px;
+}
+.pay-submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37,99,235,0.5);
+}
+.pay-submit-btn:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
+
+.pay-spinner-row { display: flex; align-items: center; justify-content: center; gap: 10px; }
+.pay-spinner {
+  width: 18px; height: 18px;
+  border: 3px solid rgba(255,255,255,0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── RIGHT PANEL ────────────────────── */
+.pay-right { width: 300px; flex-shrink: 0; }
+
+.pay-summary-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.10);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: sticky;
+  top: 24px;
+}
+
+.psc-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1e293b;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f1f5f9;
+}
+
+.psc-service {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.psc-service-icon {
+  width: 48px; height: 48px; border-radius: 14px;
+  background: linear-gradient(135deg, #eff6ff, #dbeafe);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; flex-shrink: 0;
+}
+.psc-service-name { font-size: 0.95rem; font-weight: 700; color: #1e293b; }
+.psc-service-sub  { font-size: 0.78rem; color: #94a3b8; margin-top: 2px; }
+
+.psc-divider { border: none; border-top: 1px solid #f1f5f9; }
+
+.psc-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  color: #64748b;
+}
+.psc-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  color: #1e293b;
+}
+.psc-total strong { color: #2563eb; font-size: 1.1rem; }
+
+.psc-booking-info {
+  background: #f8fafc;
+  border-radius: 10px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.psc-info-row { font-size: 0.8rem; color: #475569; }
+
+.psc-guarantee {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: #f0fdf4;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 0.8rem;
+  color: #166534;
+}
+
+/* ── SUCCESS SCREEN ─────────────────── */
+.pay-success-overlay {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  font-family: 'Inter', sans-serif;
+}
+
+.pay-success-card {
+  background: white;
+  border-radius: 24px;
+  padding: 48px 40px;
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+  animation: popIn 0.5s cubic-bezier(0.34,1.56,0.64,1);
+}
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
+}
+
+.pay-success-circle {
+  width: 80px; height: 80px;
+  background: linear-gradient(135deg, #10b981, #059669);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 20px;
+  box-shadow: 0 0 0 12px #d1fae5;
+  animation: ripple 0.6s ease 0.3s both;
+}
+@keyframes ripple {
+  from { box-shadow: 0 0 0 0 #d1fae5; }
+  to   { box-shadow: 0 0 0 16px #d1fae5; }
+}
+
+.pay-checkmark { font-size: 2.2rem; color: white; font-weight: 800; }
+
+.pay-success-card h2 { font-size: 1.8rem; color: #1e293b; margin: 0 0 8px; }
+.pay-success-sub    { color: #64748b; margin: 0 0 24px; }
+
+.pay-success-receipt {
+  background: #f8fafc;
+  border-radius: 14px;
+  padding: 20px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+.receipt-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e2e8f0;
+}
+.receipt-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  font-size: 0.88rem;
+  color: #475569;
+  border-bottom: 1px solid #f1f5f9;
+}
+.receipt-row strong { color: #1e293b; }
+.receipt-status {
+  background: #d1fae5;
+  color: #065f46;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.pay-redirect-note {
+  font-size: 0.82rem;
+  color: #94a3b8;
+  margin: 0 0 16px;
+}
+
+.pay-goto-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+.pay-goto-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,99,235,0.4); }
+
+/* ── BookingPage additions ─────────── */
+.service-price {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #38ef7d;
+  margin-top: 4px;
+}
+
+.booking-steps {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+.bstep {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+}
+.bstep.active { color: white; font-weight: 700; }
+.bstep span {
+  width: 22px; height: 22px; border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.75rem; font-weight: 700;
+}
+.bstep.active span { background: #38ef7d; color: #1a3a2f; }
+.bstep-arrow { color: rgba(255,255,255,0.3); font-size: 0.9rem; }
+
+.order-summary {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: 1px solid #e2e8f0;
+}
+.os-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  color: #64748b;
+}
+.os-total {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #1e293b;
+  padding-top: 8px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.pay-divider-text {
+  text-align: center;
+  color: #94a3b8;
+  font-size: 0.82rem;
+  position: relative;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .pay-container { flex-direction: column; }
+  .pay-right { width: 100%; }
+  .upi-apps, .netbank-grid { grid-template-columns: repeat(2, 1fr); }
+  .wallet-grid { grid-template-columns: repeat(2, 1fr); }
+  .pay-field-row { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,315 @@
+/* src/pages/Book.css */
+.book-page-wrapper {
+  background: linear-gradient(135deg, #f0f4f8 0%, #d7e1ec 100%);
+  min-height: calc(100vh - 80px); /* Adjusts for navbar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.book-card-modern {
+  background: #ffffff;
+  width: 100%;
+  max-width: 950px;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  display: flex;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* --- Left Panel: Info & Branding --- */
+.book-info-panel {
+  background: linear-gradient(135deg, #659fd9 0%, #3498db 100%);
+  color: #ffffff;
+  padding: 50px 40px;
+  flex: 0 0 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.book-info-panel h2 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.book-info-panel p {
+  color: #e0f2fe;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.selected-service-highlight {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.selected-service-highlight span {
+  display: block;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #a1c4fd;
+  margin-bottom: 5px;
+}
+
+.selected-service-highlight h3 {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+/* --- Right Panel: The Form --- */
+.book-form-panel {
+  padding: 40px 32px;
+  flex: 1;
+  background: #ffffff;
+  min-width: 0;        /* prevents flex child from overflowing */
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.book-form-panel h3 {
+  color: #2c3e50;
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #f0f4f8;
+  padding-bottom: 10px;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #4a5568;
+  font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 14px 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: #2d3748;
+  background-color: #f8fafc;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  width: 100%;           /* ensures inputs never exceed parent width */
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #3498db;
+  background-color: #ffffff;
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.15);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.submit-btn-modern {
+  background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+  color: white;
+  padding: 16px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.15rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+}
+
+.submit-btn-modern:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4);
+}
+
+.submit-btn-modern:active {
+  transform: translateY(0);
+}
+
+/* --- Responsive Design for Mobile --- */
+@media (max-width: 768px) {
+  .book-card-modern {
+    flex-direction: column;
+  }
+  
+  .form-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .book-info-panel {
+    padding: 40px 30px;
+  }
+  
+  .book-form-panel {
+    padding: 40px 30px;
+  }
+}
+/* ===== SUCCESS POPUP MODAL ===== */
+.success-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.success-modal {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 48px 40px;
+  max-width: 480px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.2);
+  animation: slideUp 0.35s cubic-bezier(0.34,1.56,0.64,1);
+}
+
+@keyframes slideUp {
+  from { transform: translateY(60px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+.success-icon {
+  font-size: 4rem;
+  margin-bottom: 16px;
+  animation: pop 0.4s ease 0.2s both;
+}
+
+@keyframes pop {
+  from { transform: scale(0); }
+  to   { transform: scale(1); }
+}
+
+.success-modal h2 {
+  font-size: 1.9rem;
+  color: #1a202c;
+  margin-bottom: 12px;
+}
+
+.success-modal > p {
+  color: #718096;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.success-booking-details {
+  background: #f7fafc;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 28px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+  color: #4a5568;
+}
+
+.detail-row span:first-child {
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.status-badge {
+  background: #fef3c7;
+  color: #d97706;
+  padding: 3px 12px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.success-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.success-btn-primary {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+  border: none;
+  padding: 13px 28px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 14px rgba(52,152,219,0.35);
+}
+
+.success-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(52,152,219,0.45);
+}
+
+.success-btn-secondary {
+  background: #f0f4f8;
+  color: #4a5568;
+  border: none;
+  padding: 13px 28px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.success-btn-secondary:hover {
+  background: #e2e8f0;
+}

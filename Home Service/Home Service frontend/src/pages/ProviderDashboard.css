@@ -1,0 +1,269 @@
+/* src/pages/ProviderDashboard.css */
+
+.provider-wrapper {
+  padding: 2rem;
+  background-color: #f4f7f6;
+  min-height: calc(100vh - 70px);
+}
+
+.provider-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+/* --- THE BANNER --- */
+.provider-banner {
+  background-color: #142434;
+  color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px rgba(237, 233, 233, 0.1);
+}
+
+.provider-banner h1 {
+  margin: 0 0 10px 0;
+  font-size: 2rem;
+  color: white;
+}
+
+.provider-banner p {
+  margin: 0;
+  color: #bdc3c7;
+  font-size: 1.1rem;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(46, 204, 113, 0.2);
+  color: #2ecc71;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid #2ecc71;
+  font-weight: bold;
+}
+
+.pulse-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #2ecc71;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(46, 204, 113, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); }
+}
+
+/* --- TWO COLUMN LAYOUT --- */
+.provider-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.job-section {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.job-section h3 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+  border-bottom: 2px solid #ecf0f1;
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.badge-count {
+  background: #e74c3c;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+}
+
+/* --- COMPACT PRO CARDS --- */
+.pro-card {
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #eaeaea;
+  margin-bottom: 15px;
+  padding: 15px; /* Made smaller */
+  border-top: 4px solid #ccc; 
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Tighter spacing */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+.border-pending { border-top-color: #f1c40f; }
+.border-active { border-top-color: #2ecc71; }
+
+.pro-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px dashed #eee;
+  padding-bottom: 8px;
+}
+
+.booking-id {
+  color: #95a5a6;
+  font-size: 0.85rem;
+}
+
+.status-badge {
+  padding: 3px 10px;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.status-badge.pending {
+  color: #e67e22;
+  border: 1px solid #e67e22;
+  background: rgba(230, 126, 34, 0.1);
+}
+
+.status-badge.accepted {
+  color: #2ecc71;
+  border: 1px solid #2ecc71;
+  background: rgba(46, 204, 113, 0.1);
+}
+
+/* Compact Detail Rows */
+.pro-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Tighter spacing */
+}
+
+.detail-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.detail-row .icon {
+  font-size: 1.2rem; /* Smaller icon */
+  background: #f8f9fa;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.text-stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-stack .label {
+  font-size: 0.7rem;
+  color: #95a5a6;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.text-stack strong {
+  color: #2c3e50;
+  font-size: 0.9rem; /* Smaller text */
+}
+
+/* Buttons */
+.btn-accept-full, .btn-complete-full {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  font-size: 0.9rem;
+}
+
+.btn-accept-full { background-color: #2ecc71; color: white; }
+.btn-complete-full { background-color: #3498db; color: white; }
+.btn-accept-full:hover, .btn-complete-full:hover { opacity: 0.9; }
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+  .provider-layout { grid-template-columns: 1fr; }
+  .provider-banner { flex-direction: column; text-align: center; gap: 15px; }
+}
+/* Extra styles for rebuilt provider dashboard */
+.provider-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.pstat-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-top: 4px solid #ccc;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  font-size: 1.6rem;
+}
+.pstat-card div p { margin: 0; font-size: 0.82rem; color: #7f8c8d; text-transform: uppercase; font-weight: 600; }
+.pstat-card div h3 { margin: 4px 0 0; font-size: 2rem; color: #2c3e50; }
+.provider-loading { text-align: center; padding: 60px; color: #7f8c8d; font-size: 1.1rem; }
+.empty-msg { color: #7f8c8d; padding: 12px 0; }
+.history-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px,1fr)); gap: 1.5rem; }
+.history-label { text-align:center; padding:10px; font-weight:bold; background:#f4f7f6; border-radius:6px; }
+.btn-reject {
+  flex: 1;
+  padding: 12px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+.btn-reject:hover { background: #c0392b; }
+.provider-toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #2c3e50;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  z-index: 9999;
+  animation: slideUp 0.3s ease;
+}
+.status-badge.pending   { background:#fef3c7; color:#d97706; }
+.status-badge.confirmed { background:#d1fae5; color:#065f46; }
+.status-badge.completed { background:#dbeafe; color:#1e40af; }
+.status-badge.cancelled { background:#fee2e2; color:#991b1b; }
+
+/* Provider internal topbar */
+.prov-topbar { display:flex; justify-content:space-between; align-items:center; background:#0f2137; color:white; padding:14px 28px; position:sticky; top:0; z-index:100; box-shadow:0 2px 8px rgba(0,0,0,0.2); }
+.prov-topbar-brand { font-weight:800; font-size:1.05rem; letter-spacing:0.3px; }
+.prov-topbar-right { display:flex; align-items:center; gap:16px; }
+.prov-topbar-user { font-size:0.9rem; color:rgba(255,255,255,0.8); }
+.prov-topbar-user em { color:#38ef7d; font-style:normal; font-weight:700; }
+.prov-topbar-logout { padding:8px 18px; background:#e74c3c; color:white; border:none; border-radius:8px; cursor:pointer; font-weight:700; font-size:0.88rem; }
+.prov-topbar-logout:hover { background:#c0392b; }

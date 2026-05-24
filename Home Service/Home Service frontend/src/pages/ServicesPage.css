@@ -1,0 +1,62 @@
+/* src/pages/Services.css */
+.services-page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  min-height: 70vh;
+}
+
+.services-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.services-header h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.services-header p {
+  color: #7f8c8d;
+  font-size: 1.1rem;
+}
+
+/* Search Bar Styling */
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 500px;
+  padding: 15px 20px;
+  font-size: 1rem;
+  border: 2px solid #ecf0f1;
+  border-radius: 30px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.search-input:focus {
+  border-color: #3498db;
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.15);
+}
+
+/* Reusing the Grid style from the Home page */
+.all-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.no-results {
+  text-align: center;
+  color: #e74c3c;
+  font-size: 1.2rem;
+  grid-column: 1 / -1;
+  padding: 40px;
+}

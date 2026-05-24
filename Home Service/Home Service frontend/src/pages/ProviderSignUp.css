@@ -1,0 +1,140 @@
+/* src/pages/ProviderSignUp.css */
+.provider-page-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  background-color: #f4f7f6;
+  padding: 50px 20px;
+}
+
+.provider-card {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 800px;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.provider-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.provider-header h2 {
+  color: #2c3e50;
+  font-size: 2.2rem;
+  margin: 0 0 10px 0;
+}
+
+.provider-header p {
+  color: #7f8c8d;
+  font-size: 1rem;
+}
+
+.provider-section-title {
+  font-size: 1.2rem;
+  color: #3498db;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #ecf0f1;
+  padding-bottom: 5px;
+  margin-top: 25px;
+}
+
+.provider-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 2-Column Grid for desktop */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.provider-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.provider-input-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #34495e;
+}
+
+.provider-input-group input,
+.provider-input-group select {
+  padding: 12px 15px;
+  border: 1px solid #dcdde1;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  background-color: #fbfbfb;
+}
+
+.provider-input-group input:focus,
+.provider-input-group select:focus {
+  outline: none;
+  border-color: #3498db;
+  background-color: #ffffff;
+}
+
+/* File Upload Styling */
+.file-upload-wrapper {
+  grid-column: span 2; /* Makes file upload span across both columns */
+  display: flex;
+  gap: 20px;
+}
+
+.file-upload-box {
+  flex: 1;
+  border: 2px dashed #bdc3c7;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  background-color: #fafbfc;
+  transition: border-color 0.3s;
+}
+
+.file-upload-box:hover {
+  border-color: #3498db;
+}
+
+.file-upload-box input[type="file"] {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.provider-submit-btn {
+  background-color: #2ecc71;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 30px;
+  transition: background-color 0.3s, transform 0.1s;
+}
+
+.provider-submit-btn:hover {
+  background-color: #27ae60;
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustment for small screens */
+@media (max-width: 600px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .file-upload-wrapper {
+    flex-direction: column;
+    grid-column: span 1;
+  }
+}
