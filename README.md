@@ -1,5 +1,3 @@
-# Home-Service-web-Application
-
 # Home Line Services - Home Services Web Application
 
 Home Line Services is a full-stack web application that allows users to book household services online. The application connects customers with service providers and provides a convenient platform for managing home service bookings.
